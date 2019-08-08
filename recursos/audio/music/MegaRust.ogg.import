@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MegaRust.ogg-e217e5b1ebdf72d83a8367aaa419cfc5.oggstr"
+
+[deps]
+
+source_file="res://recursos/audio/music/MegaRust.ogg"
+dest_files=[ "res://.import/MegaRust.ogg-e217e5b1ebdf72d83a8367aaa419cfc5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

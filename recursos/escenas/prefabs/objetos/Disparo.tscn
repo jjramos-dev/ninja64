@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Disparo.gd" type="Script" id=1]
+[ext_resource path="res://recursos/graficos/efectos/disparo.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 1.83779
+
+[node name="Disparo" type="KinematicBody2D"]
+z_index = 20
+collision_layer = 16
+collision_mask = 0
+script = ExtResource( 1 )
+velocity = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="disparo" type="Sprite" parent="."]
+position = Vector2( 0.538614, 0.46167 )
+texture = ExtResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

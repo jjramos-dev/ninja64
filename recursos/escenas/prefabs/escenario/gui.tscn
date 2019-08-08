@@ -1,0 +1,168 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://recursos/escenas/prefabs/escenario/gui.gd" type="Script" id=1]
+[ext_resource path="res://recursos/graficos/efectos/GUI.png" type="Texture" id=2]
+[ext_resource path="res://recursos/escenas/prefabs/escenario/cartel_ganaste.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=3]
+resource_name = "fadeout"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 3.8, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.717647 ), Color( 1, 1, 1, 0.984314 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 10 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "volver_a_menu"
+} ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "fin_de_partida"
+length = 1.5
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.7, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "matar_monstruo"
+}, {
+"args": [  ],
+"method": "poner_cartel_win"
+}, {
+"args": [  ],
+"method": "fade"
+}, {
+"args": [  ],
+"method": "volver_a_menu"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fin_de_partida_die"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.7, 1, 1.1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "matar_ninja"
+}, {
+"args": [  ],
+"method": "poner_cartel_die"
+}, {
+"args": [  ],
+"method": "volver_"
+}, {
+"args": [  ],
+"method": "fade"
+}, {
+"args": [  ],
+"method": "volver_a_menu"
+} ]
+}
+
+[node name="gui" type="Control"]
+modulate = Color( 1, 0.992157, 0.992157, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="guy" type="Sprite" parent="."]
+position = Vector2( 4.31839, 4.50032 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+frame = 2
+
+[node name="heart-guy1" type="Sprite" parent="."]
+position = Vector2( 10.1562, 4.50032 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+
+[node name="heart-guy2" type="Sprite" parent="."]
+position = Vector2( 16.1518, 4.6581 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+
+[node name="heart-guy3" type="Sprite" parent="."]
+position = Vector2( 21.9897, 4.50032 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+
+[node name="baddie" type="Sprite" parent="."]
+position = Vector2( 60.0144, 4.18476 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+frame = 3
+
+[node name="heart-baddie1" type="Sprite" parent="."]
+position = Vector2( 53.3877, 4.6581 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+frame = 1
+
+[node name="heart-baddie2" type="Sprite" parent="."]
+position = Vector2( 46.9188, 4.34254 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+frame = 1
+
+[node name="heart-baddie3" type="Sprite" parent="."]
+position = Vector2( 40.9232, 4.18476 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+frame = 1
+
+[node name="fade" type="Sprite" parent="."]
+visible = false
+position = Vector2( 42.3432, 23.2491 )
+scale = Vector2( 23.2153, 22.5734 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+frame = 2
+
+[node name="ganaste" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fadeout = SubResource( 3 )
+anims/fin_de_partida = SubResource( 1 )
+anims/fin_de_partida_die = SubResource( 2 )

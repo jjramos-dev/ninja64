@@ -1,0 +1,188 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://recursos/escenas/prefabs/personajes/Monstruo.gd" type="Script" id=1]
+[ext_resource path="res://recursos/graficos/personajes/monstruo/spritesheet_monstruo.png" type="Texture" id=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -4.33443, -13.4415 )
+b = Vector2( -13.1677, -7.18459 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.4642
+height = 19.8833
+
+[sub_resource type="Animation" id=3]
+resource_name = "andando"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("spritesheet_monstruo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.184036, -7.54506 ), Vector2( -0.552086, -4.78467 ), Vector2( -0.736115, -5.52077 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.690842, -17.1743 ), Vector2( 0.506821, -14.966 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.75
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("spritesheet_monstruo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.690842, -17.1743 ), Vector2( 0.690842, -17.1743 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "disparado"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("spritesheet_monstruo:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 32.37, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "muere"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("spritesheet_monstruo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spritesheet_monstruo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.24322, -19.4648 ), Vector2( 1.243, 20.435 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spritesheet_monstruo:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 11.56, 1.16, 3.49, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spritesheet_monstruo:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -0.2, 0 ), Vector2( 0.2, 0 ), Vector2( -0.2, 0 ), Vector2( 0.2, 0 ), Vector2( -0.2, 0 ), Vector2( 0.2, 0 ), Vector2( -0.2, 0 ), Vector2( 0.2, 0 ) ]
+}
+
+[node name="Monstruo" type="Area2D"]
+collision_layer = 2
+collision_mask = 1044
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -0.736115, -5.52077 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.506821, -14.966 )
+shape = SubResource( 2 )
+
+[node name="spritesheet_monstruo" type="Sprite" parent="."]
+position = Vector2( 1.24322, -19.4648 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "andando"
+anims/andando = SubResource( 3 )
+anims/comiendo = SubResource( 4 )
+anims/disparado = SubResource( 5 )
+anims/muere = SubResource( 6 )
+
+[node name="lanzador" type="Position2D" parent="."]
+position = Vector2( -0.184023, -30.5483 )
+
+[node name="DisparoTimer" type="Timer" parent="."]
+wait_time = 4.51
+autostart = true
+
+[node name="AndandoTimer" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="body_entered" from="." to="." method="_on_Monstruo_body_entered"]
+[connection signal="timeout" from="DisparoTimer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="AndandoTimer" to="." method="_on_AndandoTimer_timeout"]

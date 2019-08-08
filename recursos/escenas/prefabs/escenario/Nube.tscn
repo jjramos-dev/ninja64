@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Nube.gd" type="Script" id=1]
+[ext_resource path="res://recursos/graficos/escenario/fondo(3).png" type="Texture" id=2]
+
+[node name="Nube" type="Node2D"]
+script = ExtResource( 1 )
+velocity = 5
+
+[node name="nubes" type="Sprite" parent="."]
+texture = ExtResource( 2 )

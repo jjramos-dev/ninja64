@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://recursos/escenas/prefabs/escenario/Portada.gd" type="Script" id=1]
+[ext_resource path="res://recursos/graficos/escenario/portada.png" type="Texture" id=2]
+[ext_resource path="res://recursos/graficos/escenario/boton_dark.png" type="Texture" id=3]
+[ext_resource path="res://recursos/graficos/escenario/boton_light.png" type="Texture" id=4]
+[ext_resource path="res://recursos/fuentes/Press_Start_2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://recursos/graficos/escenario/boton.png" type="Texture" id=6]
+[ext_resource path="res://recursos/audio/music/Precipice.ogg" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 6
+font_data = ExtResource( 5 )
+
+[node name="Portada" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="portada" type="Sprite" parent="."]
+position = Vector2( 31.9398, 32.2061 )
+texture = ExtResource( 2 )
+
+[node name="BotonPlay" type="TextureButton" parent="."]
+margin_left = -5.0
+margin_top = 47.0
+margin_right = 27.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="BotonPlay"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 30.0
+margin_bottom = 10.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "Play"
+
+[node name="BotonCredits" type="TextureButton" parent="."]
+anchor_right = 1.0
+margin_left = 26.0
+margin_top = 49.0
+margin_right = 63.0
+margin_bottom = 65.0
+rect_min_size = Vector2( -1.28, 0 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="BotonCredits"]
+margin_left = -3.22093
+margin_top = 8.43849
+margin_right = 38.7791
+margin_bottom = 26.4385
+custom_fonts/font = SubResource( 1 )
+text = "Credits"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 32, 32 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+[connection signal="tree_exiting" from="." to="." method="_on_Portada_tree_exiting"]
+[connection signal="button_up" from="BotonPlay" to="." method="_on_BotonPlay_button_up"]
+[connection signal="button_up" from="BotonCredits" to="." method="_on_BotonCredits_button_up"]

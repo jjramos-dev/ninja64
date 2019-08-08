@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TrainingInTheFire.ogg-f63d3b8bd65ae3a0185e2ed91d4068a4.oggstr"
+
+[deps]
+
+source_file="res://recursos/audio/music/TrainingInTheFire.ogg"
+dest_files=[ "res://.import/TrainingInTheFire.ogg-f63d3b8bd65ae3a0185e2ed91d4068a4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

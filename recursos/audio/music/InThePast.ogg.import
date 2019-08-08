@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/InThePast.ogg-0e0008d14375687253be93804862ddb9.oggstr"
+
+[deps]
+
+source_file="res://recursos/audio/music/InThePast.ogg"
+dest_files=[ "res://.import/InThePast.ogg-0e0008d14375687253be93804862ddb9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
